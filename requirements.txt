@@ -1,8 +1,8 @@
-crewai==0.51.0
-langchain==0.2.0
-langchain-openai==0.1.0
-langchain-community==0.2.0
-python-dotenv==1.0.1
-duckduckgo-search==6.1.0
-fastapi==0.115.0
-uvicorn==0.30.0
+crewai
+langchain
+langchain-openai
+langchain-community
+python-dotenv
+duckduckgo-search
+fastapi
+uvicorn
