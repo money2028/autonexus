@@ -5,194 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AutoNexus AI - 499元/月拥有24h AI团队</title>
   <style>
-    body {
-      font-family: "Microsoft YaHei", system-ui, sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #0f172a, #1e2937);
-      color: #e2e8f0;
-      line-height: 1.6;
-    }
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: url('https://picsum.photos/id/1015/1920/1080') center/cover;
-    }
-    h1 {
-      font-size: 3.5rem;
-      margin: 0 0 20px;
-    }
-    .cta {
-      background: #3b82f6;
-      color: white;
-      padding: 16px 40px;
-      border: none;
-      border-radius: 50px;
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .cta:hover { background: #2563eb; }
-    .video-container {
-      max-width: 900px;
-      margin: 40px auto;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
-    .pricing {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      padding: 60px 20px;
-    }
-    .card {
-      background: #1e2937;
-      padding: 40px 30px;
-      border-radius: 20px;
-      width: 320px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
-    }
-    .card:hover { transform: translateY(-10px); }
-    .pro {
-      border: 4px solid #3b82f6;
-      transform: scale(1.05);
-    }
-    img.qr {
-      width: 200px;
-      margin: 20px auto;
-      display: block;
-      border-radius: 12px;
-    }
-    .form-section {
-      text-align: center;
-      padding: 80px 20px;
-      background: #0f172a;
-    }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 14px;
-      margin: 12px 0;
-      border-radius: 10px;
-      border: 1px solid #4b5563;
-      background: #1e2937;
-      color: white;
-      font-size: 1rem;
-    }
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      background: #020617;
-      font-size: 0.95rem;
-    }
-
-    /* 聊天窗口 */
-    #chat-widget {
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 360px;
-      height: 480px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 9999;
-    }
-    #chat-header {
-      background: #3b82f6;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-weight: bold;
-    }
-    #chat-messages {
-      flex: 1;
-      padding: 15px;
-      overflow-y: auto;
-      background: #f8fafc;
-    }
-    .msg {
-      margin: 10px 0;
-      padding: 12px 16px;
-      border-radius: 18px;
-      max-width: 80%;
-    }
-    .user { background: #3b82f6; color: white; margin-left: auto; }
-    .bot { background: #e2e8f0; color: black; }
-    #chat-input-area {
-      display: flex;
-      padding: 12px;
-      border-top: 1px solid #e2e8f0;
-    }
-    #chat-input {
-      flex: 1;
-      padding: 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      margin-right: 10px;
-    }
-    #chat-send {
-      background: #3b82f6;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    #chat-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      background: #3b82f6;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      font-size: 28px;
-      cursor: pointer;
-      box-shadow: 0 5px 20px rgba(59,130,246,0.4);
-      z-index: 9999;
-    }
+    body { font-family: "Microsoft YaHei", system-ui, sans-serif; margin:0; background: linear-gradient(135deg, #0f172a, #1e2937); color:#e2e8f0; line-height:1.6; }
+    .hero { text-align:center; padding:100px 20px; background: url('https://picsum.photos/id/1015/1920/1080') center/cover; }
+    h1 { font-size:3.6rem; margin:0 0 15px; }
+    .subtitle { font-size:1.5rem; margin:10px 0 30px; opacity:0.95; }
+    .cta { background:#3b82f6; color:white; padding:16px 45px; border:none; border-radius:50px; font-size:1.25rem; cursor:pointer; margin:10px; }
+    .cta:hover { background:#2563eb; }
+    .video-container { max-width:900px; margin:50px auto; border-radius:20px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5); }
+    .features { padding:80px 20px; background:#1e2937; }
+    .features-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:30px; max-width:1100px; margin:0 auto; }
+    .feature-card { background:#0f172a; padding:30px; border-radius:16px; text-align:center; }
+    .pricing { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; padding:80px 20px; }
+    .card { background:#1e2937; padding:40px; border-radius:20px; width:320px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.4); }
+    .pro { border:4px solid #3b82f6; transform:scale(1.05); }
+    img.qr { width:200px; margin:20px auto; display:block; border-radius:12px; }
+    .form-section { text-align:center; padding:80px 20px; background:#0f172a; }
+    input, textarea { width:100%; padding:14px; margin:12px 0; border-radius:10px; border:1px solid #4b5563; background:#1e2937; color:white; }
+    footer { text-align:center; padding:60px; background:#020617; }
   </style>
 </head>
 <body>
 
-  <!-- Hero + 主视频 -->
+  <!-- Hero -->
   <div class="hero">
     <h1>AutoNexus AI</h1>
-    <p style="font-size:2rem;margin:20px 0;">499元/月，30分钟拥有24h AI团队</p>
-    <p style="font-size:1.4rem;">专为中国中小电商打造 · 自动客服 + 自动销售 + 自动运营</p>
-
-    <div class="video-container">
-      <iframe width="100%" height="450"
-        src="https://v.qq.com/txp/iframe/player.html?vid=r3193f7xawy"
-        frameborder="0" allowfullscreen>
-      </iframe>
-    </div>
-
+    <p class="subtitle">499元/月 · 30分钟拥有24h AI团队</p>
+    <p style="font-size:1.4rem; max-width:720px; margin:0 auto;">
+      专为中国中小电商打造 · 纯AI驱动 · 零人工运营<br>
+      自动客服 + 自动销售 + 自动数据分析，让店铺24小时不打烊
+    </p>
     <button class="cta" onclick="window.open('https://autonexus-cc9211-wqeuksbirygldyeaur.leapcell-async.dev/run', '_blank')">
       立即体验AI董事会报告
     </button>
   </div>
 
-  <!-- 第二个视频 + 说明 -->
+  <!-- 30秒视频 -->
   <div style="text-align:center;padding:60px 20px;background:#1e2937;">
     <h2>30秒看懂AutoNexus AI到底能帮你做什么</h2>
     <div class="video-container">
-      <iframe width="100%" height="400"
-        src="https://v.qq.com/txp/iframe/player.html?vid=r3193f7xawy"
+      <iframe width="100%" height="500" 
+        src="https://v.qq.com/txp/iframe/player.html?vid=r3193f7xawy" 
         frameborder="0" allowfullscreen>
       </iframe>
+    </div>
+  </div>
+
+  <!-- AI客服核心功能亮点 -->
+  <div class="features">
+    <h2 style="text-align:center;margin-bottom:50px;">AI客服到底能为你做什么？</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>🕒 24小时不打烊</h3>
+        <p>深夜/节假日自动回复咨询、引导下单、处理退款，永不掉单</p>
+      </div>
+      <div class="feature-card">
+        <h3>🤖 智能销售跟进</h3>
+        <p>自动识别意向客户，发送优惠、催单、预约，转化率提升30%以上</p>
+      </div>
+      <div class="feature-card">
+        <h3>📊 实时数据分析</h3>
+        <p>自动统计访客、转化、热销商品，每天推送AI优化建议</p>
+      </div>
+      <div class="feature-card">
+        <h3>⚡ 30分钟快速部署</h3>
+        <p>无需编程，输入店铺链接 → AI自动接入微信/抖音/淘宝</p>
+      </div>
     </div>
   </div>
 
@@ -201,128 +78,5 @@
     <div class="card">
       <h3>基础版</h3>
       <p style="font-size:2.8rem;color:#60a5fa;">¥499<span style="font-size:1rem;">/月</span></p>
-      <ul style="list-style:none;padding:0;"><li>✅ 24h微信客服Agent</li><li>✅ 基础销售跟进</li></ul>
-      <img src="https://raw.githubusercontent.com/money2028/autonexus/main/IMG_8246.jpeg" alt="支付宝扫码支付" class="qr">
-      <button class="cta" onclick="window.open('https://raw.githubusercontent.com/money2028/autonexus/main/IMG_8246.jpeg', '_blank')">
-        立即订阅 ¥499
-      </button>
-      <p style="font-size:0.9rem;color:#94a3b8;margin-top:10px;">扫码支付后加微信 simple-1117 激活</p>
-    </div>
-
-    <div class="card pro">
-      <h3>Pro版（最受欢迎）</h3>
-      <p style="font-size:2.8rem;color:#60a5fa;">¥1,999<span style="font-size:1rem;">/月</span></p>
-      <ul style="list-style:none;padding:0;">
-        <li>✅ 全套销售+运营Agent</li>
-        <li>✅ 实时数据分析+自动upsell</li>
-        <li>✅ 优先技术支持</li>
-      </ul>
-      <img src="https://raw.githubusercontent.com/money2028/autonexus/main/IMG_8246.jpeg" alt="支付宝扫码支付" class="qr">
-      <button class="cta" onclick="window.open('https://raw.githubusercontent.com/money2028/autonexus/main/IMG_8246.jpeg', '_blank')">
-        立即订阅 ¥1,999
-      </button>
-      <p style="font-size:0.9rem;color:#94a3b8;margin-top:10px;">扫码支付后加微信 simple-1117 激活</p>
-    </div>
-
-    <div class="card">
-      <h3>企业版</h3>
-      <p style="font-size:2.8rem;color:#60a5fa;">¥4,999<span style="font-size:1rem;">/月</span></p>
-      <ul style="list-style:none;padding:0;">
-        <li>✅ 定制专属Agent</li>
-        <li>✅ 白标转售权</li>
-        <li>✅ 专属AI董事会报告</li>
-      </ul>
-      <img src="https://raw.githubusercontent.com/money2028/autonexus/main/IMG_8246.jpeg" alt="支付宝扫码支付" class="qr">
-      <button class="cta" onclick="window.open('https://raw.githubusercontent.com/money2028/autonexus/main/IMG_8246.jpeg', '_blank')">
-        立即订阅 ¥4,999
-      </button>
-      <p style="font-size:0.9rem;color:#94a3b8;margin-top:10px;">扫码支付后加微信 simple-1117 激活</p>
-    </div>
-  </section>
-
-  <!-- 提交需求 -->
-  <div class="form-section">
-    <h2>提交需求 · 30分钟内部署你的专属AI代理</h2>
-    <form action="https://formsubmit.co/cc61714@qq.com" method="POST">
-      <input type="hidden" name="_subject" value="AutoNexus新客户需求！">
-      <input type="hidden" name="_next" value="https://autonexus-ai.com">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="name" placeholder="姓名/店铺名" required />
-      <input type="email" name="email" placeholder="微信号/邮箱" required />
-      <textarea name="message" placeholder="您的需求（电商客服/销售跟进/抖音运营等）" required></textarea>
-      <button type="submit" class="cta" style="width:100%;">提交需求 → AI立即响应</button>
-    </form>
-  </div>
-
-  <!-- 实时聊天窗口 -->
-  <button id="chat-toggle">💬</button>
-  <div id="chat-widget">
-    <div id="chat-header">AutoNexus AI 客服</div>
-    <div id="chat-messages">
-      <div class="msg bot">您好！我是AutoNexus AI客服，有什么可以帮您？😊</div>
-    </div>
-    <div id="chat-input-area">
-      <input id="chat-input" type="text" placeholder="输入消息..." />
-      <button id="chat-send">发送</button>
-    </div>
-  </div>
-
-  <footer>
-    <p>海南AutoNexus人工智能科技有限公司 © 2026</p>
-    <p>唯一目标：让中小电商店主轻松拥有24h AI团队</p>
-  </footer>
-
-  <!-- 聊天JS -->
-  <script>
-    const toggle = document.getElementById('chat-toggle');
-    const widget = document.getElementById('chat-widget');
-    const input = document.getElementById('chat-input');
-    const sendBtn = document.getElementById('chat-send');
-    const messages = document.getElementById('chat-messages');
-
-    toggle.onclick = () => {
-      widget.style.display = widget.style.display === 'none' ? 'flex' : 'none';
-    };
-
-    sendBtn.onclick = sendMessage;
-    input.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') sendMessage();
-    });
-
-    function sendMessage() {
-      const msg = input.value.trim();
-      if (!msg) return;
-
-      // 显示用户消息
-      const userMsg = document.createElement('div');
-      userMsg.className = 'msg user';
-      userMsg.textContent = msg;
-      messages.appendChild(userMsg);
-
-      // 发送到后端
-      fetch('https://autonexus-cc9211-wqeuksbirygldyeaur.leapcell-async.dev/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: msg })
-      })
-      .then(res => res.json())
-      .then(data => {
-        const botMsg = document.createElement('div');
-        botMsg.className = 'msg bot';
-        botMsg.textContent = data.reply || 'AI正在思考...';
-        messages.appendChild(botMsg);
-        messages.scrollTop = messages.scrollHeight;
-      })
-      .catch(() => {
-        const errMsg = document.createElement('div');
-        errMsg.className = 'msg bot';
-        errMsg.textContent = '网络错误，请稍后再试～';
-        messages.appendChild(errMsg);
-      });
-
-      input.value = '';
-      messages.scrollTop = messages.scrollHeight;
-    }
-  </script>
-</body>
-</html>
+      <ul style="list-style:none;padding:0;"><li>✅ 24h智能客服</li><li>✅ 基础销售跟进</li><li>✅ 微信/抖音接入</li></ul>
+      <img src="https://raw.githubusercontent.com/money2028/autonexus/main/IMG_8246.jpeg" alt="支付宝支付" class="qr">
