@@ -68,4 +68,71 @@
         <p>唯一目标：可持续最大化利润 · 纯AI驱动</p>
     </footer>
 </body>
+<!-- 实时聊天窗口（右下角） -->
+<div id="chat-widget" style="position:fixed;bottom:20px;right:20px;width:350px;height:450px;background:#fff;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.3);display:none;flex-direction:column;overflow:hidden;z-index:9999;">
+  <!-- 头部 -->
+  <div style="background:#3b82f6;color:white;padding:15px;text-align:center;font-weight:bold;">AutoNexus AI 客服</div>
+  <!-- 消息区 -->
+  <div id="chat-messages" style="flex:1;padding:15px;overflow-y:auto;background:#f8fafc;">
+    <div style="margin:10px 0;text-align:left;"><span style="background:#e2e8f0;padding:10px;border-radius:15px;">您好！我是AutoNexus AI客服，有什么可以帮您？😊</span></div>
+  </div>
+  <!-- 输入区 -->
+  <div style="display:flex;padding:10px;border-top:1px solid #e2e8f0;">
+    <input id="chat-input" type="text" placeholder="输入消息..." style="flex:1;padding:10px;border:1px solid #cbd5e1;border-radius:8px;margin-right:10px;">
+    <button onclick="sendMessage()" style="background:#3b82f6;color:white;padding:10px 20px;border:none;border-radius:8px;cursor:pointer;">发送</button>
+  </div>
+</div>
+
+<!-- 聊天泡泡按钮 -->
+<button id="chat-toggle" style="position:fixed;bottom:20px;right:20px;width:60px;height:60px;background:#3b82f6;color:white;border:none;border-radius:50%;font-size:24px;box-shadow:0 5px 15px rgba(59,130,246,0.4);cursor:pointer;z-index:9999;">💬</button>
+
+<script>
+  // 切换聊天窗口
+  document.getElementById('chat-toggle').onclick = function() {
+    var widget = document.getElementById('chat-widget');
+    widget.style.display = widget.style.display === 'none' ? 'flex' : 'none';
+  };
+
+  // 发送消息
+  function sendMessage() {
+    var input = document.getElementById('chat-input');
+    var msg = input.value.trim();
+    if (!msg) return;
+
+    // 显示用户消息
+    addMessage(msg, 'right', '#3b82f6', 'white');
+
+    // 发送到后端
+    fetch('https://autonexus-cc9211-wqeuksbirygldyeaur.leapcell-async.dev/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({message: msg})
+    })
+    .then(res => res.json())
+    .then(data => {
+      addMessage(data.reply || 'AI正在思考...', 'left', '#e2e8f0', 'black');
+    })
+    .catch(err => addMessage('网络错误，请重试～', 'left', '#ef4444', 'white'));
+
+    input.value = '';
+  }
+
+  // 添加消息到聊天区
+  function addMessage(text, side, bg, color) {
+    var div = document.createElement('div');
+    div.style.margin = '10px 0';
+    div.style.textAlign = side;
+    var span = document.createElement('span');
+    span.style.background = bg;
+    span.style.color = color;
+    span.style.padding = '10px 15px';
+    span.style.borderRadius = '15px';
+    span.style.maxWidth = '80%';
+    span.style.display = 'inline-block';
+    span.innerText = text;
+    div.appendChild(span);
+    document.getElementById('chat-messages').appendChild(div);
+    div.scrollIntoView();
+  }
+</script>
 </html>
